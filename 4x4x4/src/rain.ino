@@ -27,14 +27,14 @@ void rain()
         x = rand() % 4;
         y = rand() % 4;
 
-        led l = get_led(x, y, 3);
+        struct LED l = get_led(x, y, 3);
         led_on(l);
         delay(300);
         led_off(l);
 
         for (z = 2; z >= 0; z--)
         {
-            led l = get_led(x, y, z);
+            struct LED l = get_led(x, y, z);
 
             led_on(l);
             delay(20);

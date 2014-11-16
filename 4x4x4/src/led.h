@@ -18,15 +18,15 @@
 #ifndef _LED_H_
 #define _LED_H_
 
-struct led
+struct LED
 {
     char anode;
     char cathode;
 };
 
-void led_on (struct led l);
-void led_off(struct led l);
-void cycle_leds(led leds[], int num_leds);
+void led_on (struct LED l);
+void led_off(struct LED l);
+void cycle_leds(struct LED leds[], int num_leds);
 
 #endif // _LED_H_
 

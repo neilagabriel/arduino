@@ -28,7 +28,7 @@ void scan_cols()
         {
             for (z = 3; z >= 0; z--)
             {
-                led l = get_led(x, y, z);
+                struct LED l = get_led(x, y, z);
 
                 led_on(l);
                 delay(50);

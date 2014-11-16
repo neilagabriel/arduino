@@ -20,8 +20,8 @@
 
 void biglittle_box()
 {
-    led big[8];
-    led little[8];
+    struct LED big[8];
+    struct LED little[8];
 
     big[0] = get_led(0, 0, 0);
     big[1] = get_led(0, 0, 3);

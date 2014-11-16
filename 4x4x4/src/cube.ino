@@ -82,7 +82,7 @@
 #define L231 {9,16}
 #define L230 {9,17}
 
-struct led cube[4][4][4] =
+struct LED cube[4][4][4] =
 {
     // x=0
     {
@@ -135,7 +135,7 @@ void initialize_cube(void)
         digitalWrite(pin, HIGH);
 }
 
-struct led get_led(char x, char y, char z)
+struct LED get_led(char x, char y, char z)
 {
     return cube[x][y][z];
 }

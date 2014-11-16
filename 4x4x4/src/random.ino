@@ -20,18 +20,19 @@
 
 void random_pattern()
 {
-    char i, x, y, z;
+    int i;
+    char x, y, z;
 
-    for (i = 0; i < 32; i++)
+    for (i = 0; i < (64 * 50); i++)
     {
         x = rand() % 4;
         y = rand() % 4;
         z = rand() % 4;
 
-        led l = get_led(x, y, z);
+        struct LED l = get_led(x, y, z);
 
         led_on(l);
-        delay(100);
+        delay(4);
         led_off(l);
     }
 }

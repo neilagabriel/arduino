@@ -17,21 +17,21 @@
 
 #include "led.h"
 
-void led_on(struct led l)
+void led_on(struct LED l)
 {
     digitalWrite(l.anode  , HIGH);
     digitalWrite(l.cathode, LOW);
 }
 
-void led_off(struct led l)
+void led_off(struct LED l)
 {
     digitalWrite(l.anode  , LOW);
     digitalWrite(l.cathode, HIGH);
 }
 
-void cycle_leds(led leds[], int num_leds)
+void cycle_leds(struct LED leds[], int num_leds)
 {
-    led l;
+    struct LED l;
 
     for (int i = 0; i < num_leds; i++)
     {
@@ -39,10 +39,7 @@ void cycle_leds(led leds[], int num_leds)
         
         led_on(l);
         delay(1);
-
-        led_off(l); // ???
-
-        led off(l);
+        led_off(l);
         delay(1);
     }
 }

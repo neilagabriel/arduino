@@ -20,7 +20,7 @@
 
 void initialize_cube(void);
 
-extern struct led cube[4][4][4];
-extern struct led get_led(char x, char y, char z);
+extern struct LED cube[4][4][4];
+extern struct LED get_led(char x, char y, char z);
 
 #endif // _CUBE_H_
