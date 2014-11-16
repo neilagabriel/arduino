@@ -29,3 +29,21 @@ void led_off(struct led l)
     digitalWrite(l.cathode, HIGH);
 }
 
+void cycle_leds(led leds[], int num_leds)
+{
+    led l;
+
+    for (int i = 0; i < num_leds; i++)
+    {
+        l = leds[i];
+        
+        led_on(l);
+        delay(1);
+
+        led_off(l); // ???
+
+        led off(l);
+        delay(1);
+    }
+}
+

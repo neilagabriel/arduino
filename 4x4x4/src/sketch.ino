@@ -21,9 +21,12 @@ extern void scan_rows();
 extern void scan_cols();
 extern void random_pattern();
 extern void rain();
+extern void biglittle_box();
+extern void test_pattern();
 
 void setup()
 {
+    Serial.begin(9600);
     initialize_cube();
 }
 
@@ -33,5 +36,7 @@ void loop()
     scan_cols();
     random_pattern();
     rain();
+    biglittle_box();
+    test_pattern();
 }
 
