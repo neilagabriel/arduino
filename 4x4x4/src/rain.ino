@@ -15,12 +15,33 @@
  * along with 4x4x4.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _CUBE_H_
-#define _CUBE_H_
+#include "led.h"
+#include "cube.h"
 
-void initialize_cube(void);
+void rain()
+{
+    char i, x, y, z;
 
-extern struct led cube[4][4][4];
-extern struct led get_led(char x, char y, char z);
+    for (i = 0; i < 16; i++)
+    {
+        x = rand() % 4;
+        y = rand() % 4;
 
-#endif // _CUBE_H_
+        led l = get_led(x, y, 3);
+        led_on(l);
+        delay(300);
+        led_off(l);
+
+        for (z = 2; z >= 0; z--)
+        {
+            led l = get_led(x, y, z);
+
+            led_on(l);
+            delay(20);
+            led_off(l);
+        }
+
+        delay(500);
+    }
+}
+

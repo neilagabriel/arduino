@@ -118,7 +118,7 @@ struct led cube[4][4][4] =
     },
 };
 
-void initialize_cube(void) 
+void initialize_cube(void)
 {
     int pin;
 
@@ -133,5 +133,10 @@ void initialize_cube(void)
     // Initialize cathodes
     for (pin = 10; pin <= 17; pin++)
         digitalWrite(pin, HIGH);
+}
+
+struct led get_led(char x, char y, char z)
+{
+    return cube[x][y][z];
 }
 

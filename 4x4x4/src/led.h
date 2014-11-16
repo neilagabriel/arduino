@@ -15,6 +15,9 @@
  * along with 4x4x4.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef _LED_H_
+#define _LED_H_
+
 struct led
 {
     char anode;
@@ -23,4 +26,6 @@ struct led
 
 void led_on (struct led l);
 void led_off(struct led l);
+
+#endif // _LED_H_
 
