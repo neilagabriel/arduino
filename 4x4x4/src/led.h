@@ -25,8 +25,9 @@ struct LED
 };
 
 void led_on (struct LED l);
+void led_on_multiple(struct LED leds[], int num_leds);
+
 void led_off(struct LED l);
-void cycle_leds(struct LED leds[], int num_leds);
 
 #endif // _LED_H_
 

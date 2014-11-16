@@ -32,7 +32,7 @@ static char coords[8][3] =
 
 static signed char direction[3] = {1, 1, 1};
 
-void shift(char dim)
+static void shift(char dim)
 {
     for (char c = 0; c < 8; c++)
         coords[c][dim] += direction[dim];
@@ -49,7 +49,7 @@ void shift(char dim)
     }
 }
 
-void update()
+static void update()
 {
     struct LED leds[8];
     for (char c = 0; c < 8; c++)
@@ -59,7 +59,7 @@ void update()
                           coords[c][2]);
     }
     for (char i = 0; i < 20; i++)
-        cycle_leds(leds, 8);
+        led_on_multiple(leds, 8);
 }
 
 void trapped_box()

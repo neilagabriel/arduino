@@ -24,9 +24,11 @@ extern void rain();
 extern void biglittle_box();
 extern void trapped_box();
 extern void test_pattern();
+extern void spiral();
 
 void setup()
 {
+    Serial.begin(9600);
     initialize_cube();
 }
 
@@ -38,6 +40,7 @@ void loop()
     rain();
     biglittle_box();
     trapped_box();
+    spiral();
     test_pattern();
 }
 

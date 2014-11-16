@@ -44,10 +44,10 @@ void biglittle_box()
     for (int i = 0; i < 12; i++)
     {
         for (int j = 0; j < 50; j++)
-            cycle_leds(big, 8);
+            led_on_multiple(big, 8);
 
         for (int j = 0; j < 50; j++)
-            cycle_leds(little, 8);
+            led_on_multiple(little, 8);
     }
 }
 

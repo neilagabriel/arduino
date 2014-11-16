@@ -23,24 +23,20 @@ void led_on(struct LED l)
     digitalWrite(l.cathode, LOW);
 }
 
+void led_on_multiple(struct LED leds[], int num_leds)
+{
+    struct LED l;
+    for (int i = 0; i < num_leds; i++)
+    {
+        l = leds[i];
+        led_on(l);  delay(1);
+        led_off(l); delay(1);
+    }
+}
+
 void led_off(struct LED l)
 {
     digitalWrite(l.anode  , LOW);
     digitalWrite(l.cathode, HIGH);
-}
-
-void cycle_leds(struct LED leds[], int num_leds)
-{
-    struct LED l;
-
-    for (int i = 0; i < num_leds; i++)
-    {
-        l = leds[i];
-        
-        led_on(l);
-        delay(1);
-        led_off(l);
-        delay(1);
-    }
 }
 
