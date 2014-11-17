@@ -15,6 +15,7 @@
  * along with 4x4x4.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "cube.h"
 #include "led.h"
 
 void led_on(struct LED l)
@@ -29,6 +30,22 @@ void led_on_multiple(struct LED leds[], int num_leds)
     for (int i = 0; i < num_leds; i++)
     {
         l = leds[i];
+        led_on(l);
+        delayMicroseconds(100);
+        led_off(l);
+    }
+}
+
+void led_on_multiple2(struct COORDINATE coords[], int num_coords)
+{
+    struct COORDINATE c;
+    struct LED l;
+
+    for (int i = 0; i < num_coords; i++)
+    {
+        c = coords[i];
+        l = get_led(c.x, c.y, c.z);
+
         led_on(l);
         delayMicroseconds(100);
         led_off(l);

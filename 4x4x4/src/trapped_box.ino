@@ -58,8 +58,14 @@ static void update()
                           coords[c][1], 
                           coords[c][2]);
     }
-    for (char i = 0; i < 20; i++)
+
+    long startTime, duration;
+    for (duration = 0, startTime = millis(); 
+         duration < 200; 
+         duration = millis() - startTime)
+    {
         led_on_multiple(leds, 8);
+    }
 }
 
 void trapped_box()

@@ -23,8 +23,10 @@ extern void random_pattern();
 extern void rain();
 extern void biglittle_box();
 extern void trapped_box();
-extern void test_pattern();
 extern void spiral();
+extern void elevator();
+extern void siren();
+extern void test_pattern();
 
 void setup()
 {
@@ -41,6 +43,8 @@ void loop()
     biglittle_box();
     trapped_box();
     spiral();
+    elevator();
+    siren();
     test_pattern();
 }
 
