@@ -18,6 +18,9 @@
 #include "led.h"
 #include "cube.h"
 
+#define ITERATIONS 15
+#define INTERVAL   250
+
 void biglittle_box()
 {
     struct LED big[8];
@@ -41,13 +44,23 @@ void biglittle_box()
     little[6] = get_led(2, 2, 1);
     little[7] = get_led(2, 2, 2);
 
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < ITERATIONS; i++)
     {
-        for (int j = 0; j < 50; j++)
-            led_on_multiple(big, 8);
+        long startTime, duration;
 
-        for (int j = 0; j < 50; j++)
+        for (duration = 0, startTime = millis(); 
+             duration < INTERVAL; 
+             duration = millis() - startTime)
+        {
+            led_on_multiple(big, 8);
+        }
+
+        for (duration = 0, startTime = millis(); 
+             duration < INTERVAL; 
+             duration = millis() - startTime)
+        {
             led_on_multiple(little, 8);
+        }
     }
 }
 

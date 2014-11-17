@@ -18,13 +18,20 @@
 #ifndef _LED_H_
 #define _LED_H_
 
+struct COORDINATE
+{
+    char x;
+    char y;
+    char z;
+};
+
 struct LED
 {
     char anode;
     char cathode;
 };
 
-void led_on (struct LED l);
+void led_on(struct LED l);
 void led_on_multiple(struct LED leds[], int num_leds);
 
 void led_off(struct LED l);

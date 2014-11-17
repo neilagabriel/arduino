@@ -29,8 +29,9 @@ void led_on_multiple(struct LED leds[], int num_leds)
     for (int i = 0; i < num_leds; i++)
     {
         l = leds[i];
-        led_on(l);  delay(1);
-        led_off(l); delay(1);
+        led_on(l);
+        delayMicroseconds(100);
+        led_off(l);
     }
 }
 

@@ -18,9 +18,13 @@
 #include "led.h"
 #include "cube.h"
 
+#define ITERATIONS 10
+
 void spiral()
 {
-    static int coords[8][3] =
+    struct LED leds[3];
+
+    static struct COORDINATE coords[] =
     {
         {0, 0, 1},
         {0, 0, 2},
@@ -32,29 +36,33 @@ void spiral()
         {1, 0, 0},
     };
 
-    for (int j = 0; j < 10; j++)
+    for (int iteration = 0; iteration < ITERATIONS; iteration++)
     {
-        struct LED leds[3];
-        for (int y = 0; y <=3; y++)
+        for (int y = 0; y <= 3; y++)
         {
             for (int c1 = 0; c1 < 8; c1++)
             {
                 int c2 = (c1 + 7) % 8;
                 int c3 = (c1 + 6) % 8;
 
-                leds[0] = get_led(coords[c1][0], y, coords[c1][2]);
-                leds[1] = get_led(coords[c2][0], y, coords[c2][2]);
-                leds[2] = get_led(coords[c3][0], y, coords[c3][2]);
+                leds[0] = get_led(coords[c1].x, y, coords[c1].z);
+                leds[1] = get_led(coords[c2].x, y, coords[c2].z);
+                leds[2] = get_led(coords[c3].x, y, coords[c3].z);
 
-                for (int i = 0; i < 25; i++)
+                long startTime, duration;
+                for (duration = 0, startTime = millis(); 
+                     duration < 125; 
+                     duration = millis() - startTime)
+                {
                     led_on_multiple(leds, 3);
+                }
             }
         }
         for (signed int y = 2; y >= 1; y--)
         {
             for (int c = 0; c < 8; c++)
             {
-                struct LED led1 = get_led(coords[c][0], y, coords[c][2]);
+                struct LED led1 = get_led(coords[c].x, y, coords[c].z);
                 led_on(led1);
                 delay(50);
                 led_off(led1);
