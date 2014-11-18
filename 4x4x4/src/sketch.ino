@@ -26,6 +26,7 @@ extern void trapped_box();
 extern void spiral();
 extern void elevator();
 extern void siren();
+extern void spider();
 extern void test_pattern();
 
 void setup()
@@ -45,6 +46,7 @@ void loop()
     spiral();
     elevator();
     siren();
+    spider();
     test_pattern();
 }
 
