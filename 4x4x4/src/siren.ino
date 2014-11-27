@@ -68,7 +68,7 @@ static void light(struct COORDINATE c[])
          duration < INTERVAL; 
          duration = millis() - startTime)
     {
-        led_on_multiple2(c, 16);
+        coordinate_on_multiple(c, 16);
     }
 }
 

@@ -18,7 +18,7 @@
 #include "led.h"
 #include "cube.h"
 
-#define ITERATIONS 10
+#define ITERATIONS 3
 
 void spiral()
 {

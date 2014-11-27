@@ -17,17 +17,19 @@
 
 #include "cube.h"
 
-extern void scan_rows();
-extern void scan_cols();
-extern void random_pattern();
-extern void rain();
-extern void biglittle_box();
-extern void trapped_box();
-extern void spiral();
-extern void elevator();
-extern void siren();
-extern void spider();
-extern void test_pattern();
+//extern void scan_rows();
+//extern void scan_cols();
+//extern void random_pattern();
+//extern void rain();
+//extern void biglittle_box();
+//extern void fireworks();
+//extern void trapped_box();
+//extern void spiral();
+//extern void elevator();
+//extern void siren();
+//extern void spider();
+//extern void test_pattern();
+extern void jonathan();
 
 void setup()
 {
@@ -37,16 +39,17 @@ void setup()
 
 void loop()
 {
-    scan_rows();
-    scan_cols();
-    random_pattern();
-    rain();
-    biglittle_box();
-    trapped_box();
-    spiral();
-    elevator();
-    siren();
-    spider();
-    test_pattern();
+    //scan_rows();
+    //scan_cols();
+    //random_pattern();
+    //rain();
+    //biglittle_box();
+    //trapped_box();
+    //spiral();
+    //elevator();
+    //siren();
+    //spider();
+    //fireworks();
+    jonathan();
 }
 

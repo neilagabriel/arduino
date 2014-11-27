@@ -23,7 +23,7 @@ void random_pattern()
     int i;
     char x, y, z;
 
-    for (i = 0; i < (64 * 50); i++)
+    for (i = 0; i < (64 * 20); i++)
     {
         x = rand() % 4;
         y = rand() % 4;

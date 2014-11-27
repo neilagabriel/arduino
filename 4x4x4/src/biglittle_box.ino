@@ -18,7 +18,7 @@
 #include "led.h"
 #include "cube.h"
 
-#define ITERATIONS 15
+#define ITERATIONS 8
 #define INTERVAL   250
 
 void biglittle_box()

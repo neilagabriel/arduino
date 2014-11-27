@@ -49,7 +49,7 @@ void elevator()
              duration < 400; 
              duration = millis() - startTime)
         {
-            led_on_multiple2(coords, 16);
+            coordinate_on_multiple(coords, 16);
         }
     }
 }

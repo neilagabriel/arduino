@@ -36,7 +36,19 @@ void led_on_multiple(struct LED leds[], int num_leds)
     }
 }
 
-void led_on_multiple2(struct COORDINATE coords[], int num_coords)
+void led_off(struct LED l)
+{
+    digitalWrite(l.anode  , LOW);
+    digitalWrite(l.cathode, HIGH);
+}
+
+void coordinate_on(struct COORDINATE c)
+{
+    struct LED l = get_led(c.x, c.y, c.z);
+    led_on(l);
+}
+
+void coordinate_on_multiple(struct COORDINATE coords[], int num_coords)
 {
     struct COORDINATE c;
     struct LED l;
@@ -52,9 +64,20 @@ void led_on_multiple2(struct COORDINATE coords[], int num_coords)
     }
 }
 
-void led_off(struct LED l)
+void coordinate_on_multiple_time(struct COORDINATE coords[], int num_coords, unsigned int time)
 {
-    digitalWrite(l.anode  , LOW);
-    digitalWrite(l.cathode, HIGH);
+    long startTime, duration;
+    for (duration = 0, startTime = millis(); 
+         duration < time; 
+         duration = millis() - startTime)
+    {
+        coordinate_on_multiple(coords, num_coords);
+    }
+}
+
+void coordinate_off(struct COORDINATE c)
+{
+    struct LED l = get_led(c.x, c.y, c.z);
+    led_off(l);
 }
 

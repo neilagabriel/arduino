@@ -33,9 +33,12 @@ struct LED
 
 void led_on(struct LED l);
 void led_on_multiple(struct LED leds[], int num_leds);
-void led_on_multiple2(struct COORDINATE coords[], int num_coords);
-
 void led_off(struct LED l);
+
+void coordinate_on(struct COORDINATE coord);
+void coordinate_on_multiple(struct COORDINATE coords[], int num_coords);
+void coordinate_on_multiple_time(struct COORDINATE coords[], int num_coords, unsigned int time);
+void coordinate_off(struct COORDINATE c);
 
 #endif // _LED_H_
 
